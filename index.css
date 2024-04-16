@@ -53,10 +53,15 @@ body {
 
 .player-profile {
     width: 100%;
-    margin: 0px 5%;
+    margin: -40px 5%;
     display: none;
     flex-direction: column;
     align-items: center;
+}
+
+.player-profile h2 {
+    font-size: 50px;
+    color: lightblue;
 }
 
 .player-profile img {
@@ -94,4 +99,16 @@ body {
 
 .player-profile form button:hover {
     color: white;
+}
+
+.score {
+    display: none;
+    justify-content: center;
+    width: 100%;
+    margin: 50px 5%;
+    text-align: center;
+}
+
+.score h3 {
+    font-size: 50px;
 }
