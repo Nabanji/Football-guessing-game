@@ -126,4 +126,5 @@ submitBtn.addEventListener("click", (e) => {
 // Reset button functionality
 resetBtn.addEventListener("click", () => {
     window.location.reload();
+    playerProfile.style.display = "none";
 })
