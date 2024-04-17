@@ -2,32 +2,32 @@ const playerDetails = [
     {
         fname: "Lionel",
         lname: "Messi",
-        img: "/images/messi.jpg"
+        img: "images/messi.jpg"
     },
     {
         fname: "Neymar",
         lname: "Junior",
-        img: "/images/neymar.jpg"
+        img: "images/neymar.jpg"
     },
     {
         fname: "Cristiano",
         lname: "Ronaldo",
-        img: "/images/ronaldo.jpg"
+        img: "images/ronaldo.jpg"
     },
     {
         fname: "Jude",
         lname: "Bellingham",
-        img: "/images/bellingham.jpg"
+        img: "images/bellingham.jpg"
     },
     {
         fname: "Andres",
         lname: "Iniesta",
-        img: "/images/iniesta.jpg"
+        img: "images/iniesta.jpg"
     },
     {
         fname: "Wayne",
         lname: "Rooney",
-        img: "/images/rooney.jpg"
+        img: "images/rooney.jpg"
     }
 ]
 
