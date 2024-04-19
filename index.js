@@ -28,6 +28,76 @@ const playerDetails = [
         fname: "Wayne",
         lname: "Rooney",
         img: "images/rooney.jpg"
+    },
+    {
+        fname: "Kevin",
+        lname: "De Bruyne",
+        img: "images/de bruyne.jpg"
+    },
+    {
+        fname: "Ronaldinho",
+        lname: "Ronaldinho",
+        img: "images/gaucho.jpg"
+    },
+    {
+        fname: "Isco",
+        lname: "Alarcon",
+        img: "images/isco.jpg"
+    },
+    {
+        fname: "Diego",
+        lname: "Maradona",
+        img: "images/maradona.jpg"
+    },
+    {
+        fname: "Kylian",
+        lname: "Mbappe",
+        img: "images/mbappe.jpg"
+    },
+    {
+        fname: "Bryan",
+        lname: "Mbeumo",
+        img: "images/mbeumo.jpg"
+    },
+    {
+        fname: "Ronaldo",
+        lname: "Nazario",
+        img: "images/nazario.jpg"
+    },
+    {
+        fname: "Martin",
+        lname: "Odegaard",
+        img: "images/odegaard.jpg"
+    },
+    {
+        fname: "Mesut",
+        lname: "Ozil",
+        img: "images/ozil.jpg"
+    },
+    {
+        fname: "Bukayo",
+        lname: "Saka",
+        img: "images/saka.jpg"
+    },
+    {
+        fname: "Virgil",
+        lname: "Van Dijk",
+        img: "images/van dijk.jpg"
+    },
+    {
+        fname: "Nemanja",
+        lname: "Vidic",
+        img: "images/vidic.jpg"
+    },
+    {
+        fname: "Vinicius",
+        lname: "Souza",
+        img: "images/vinicius souza.jpg"
+    },
+    {
+        fname: "Mason",
+        lname: "Greenwood",
+        img: "images/greenwood.jpg"
     }
 ]
 
@@ -78,47 +148,59 @@ submitBtn.addEventListener("click", (e) => {
     // Preventing the page from reloading
     e.preventDefault();
 
+    if (userAnswer.value === "") {
+        alert("Enter a name");
+        // userAnswer.style.outline = "1px solid red";
+    } else {
+        if (
+            userAnswer.value.toLowerCase() === playerFirstName.toLowerCase() ||
+            userAnswer.value.toLowerCase() === playerLastName.toLowerCase() ||
+            userAnswer.value.toLowerCase() === playerFirstName.toLowerCase() + " " + playerLastName.toLowerCase()
+        ) {
+            userScore++;
+            playerScore.textContent = userScore + " ";
 
-    if (
-        userAnswer.value.toLowerCase() === playerFirstName.toLowerCase() ||
-        userAnswer.value.toLowerCase() === playerLastName.toLowerCase() ||
-        userAnswer.value.toLowerCase() === playerFirstName.toLowerCase() + " " + playerLastName.toLowerCase()
-    ) {
-        userScore++;
-        playerScore.textContent = userScore + " ";
+            let scoreInPercentage = (userScore / playerDetails.length) * 100;
+            scoreInPercentage = Math.floor(scoreInPercentage);
+            result.textContent = `Your score is`;
 
-        let scoreInPercentage = (userScore / playerDetails.length) * 100;
-        scoreInPercentage = Math.floor(scoreInPercentage);
-        result.textContent = "Your score is " + scoreInPercentage + "%";
+            // Specific user score
+            let personalScore = document.querySelector(".personal-score");
+            personalScore.innerHTML = `${scoreInPercentage} %`;
 
-        if (scoreInPercentage >= 50) {
-            result.style.color = "green";
-        } else {
-            result.style.color = "red";
+            if (scoreInPercentage >= 50) {
+                personalScore.style.color = "green";
+            } else {
+                personalScore.style.color = "red";
+            }
         }
+
+        index++;
+
+        if (index > playerDetails.length - 1) {
+            index = 0;
+        }
+
+        playerFirstName = playerDetails[index].fname.toLowerCase();
+        playerLastName = playerDetails[index].lname.toLowerCase();
+        playerImage.src = playerDetails[index].img;
+
+        attempts--;
+
+        if (attempts < 1) {
+            playerImage.style.display = "none";
+            let form = document.getElementById("user-form");
+            form.style.display = "none";
+            let finalScore = document.querySelector(".user-score");
+            finalScore.style.display = "none";
+
+            displayScore.style.display = "flex";
+        }
+
+        userAnswer.value = "";
     }
 
-    index++;
 
-    if (index > playerDetails.length - 1) {
-        index = 0;
-    }
-
-    playerFirstName = playerDetails[index].fname.toLowerCase();
-    playerLastName = playerDetails[index].lname.toLowerCase();
-    playerImage.src = playerDetails[index].img;
-
-    attempts--;
-
-    if (attempts < 1) {
-        playerImage.style.display = "none";
-        let form = document.getElementById("user-form");
-        form.style.display = "none";
-
-        displayScore.style.display = "flex";
-    }
-
-    userAnswer.value = "";
 
 })
 

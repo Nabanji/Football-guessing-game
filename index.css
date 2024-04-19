@@ -107,6 +107,7 @@ body {
 
 .score {
     display: none;
+    flex-direction: column;
     justify-content: center;
     width: 100%;
     margin: 50px 5%;
@@ -115,38 +116,49 @@ body {
 
 .score h3 {
     font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
 }
+
+.score .personal-score {
+    margin-top: -10px;
+}
+
+
 
 @media screen and (max-width: 470px) {
     .intro {
-        margin: 20px 5%;
+        margin: 70px 5%;
     }
 
     .intro h1 {
         margin: 0;
-        font-size: 30px;
+        font-size: 37px;
     }
 
     .intro h2 {
-        margin: 5px 5%;
-        font-size: 25px;
+        margin: 10px 5%;
+        font-size: 26px;
     }
 
     .intro button {
         width: 150px;
         height: 30px;
         font-size: 14px;
-        margin: 4px;
+        margin: 1px;
+    }
+
+    .player-profile {
+        margin: -55px 5%;
     }
 
     .player-profile h2 {
-        margin-top: 26px;
+        margin-top: 0px;
         font-size: 22px;
     }
 
     .player-profile img {
-        width: 150px;
-        height: 170px;
+        width: 180px;
+        height: 190px;
         margin-top: 4px;
     }
 
